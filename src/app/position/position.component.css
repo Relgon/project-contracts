@@ -1,0 +1,8 @@
+.position-card {
+  max-width: 300px;
+}
+
+.position-card-avatar {
+  background-image: url('../../flat-mac-icon-15.png');
+  background-size: cover;
+}

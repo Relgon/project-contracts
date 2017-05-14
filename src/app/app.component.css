@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.nav-link {
+  color: rgba(0,0,0,.54);
+  display: flex;
+  align-items:center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+md-toolbar {
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  z-index: 1000;
+  position: fixed;
+  background-color: rgba(255,255,255, 255)
+}
+
+.app-content {
+    margin-left:25%;
+    margin-top:100px;
+    max-width: 50%;
+}
