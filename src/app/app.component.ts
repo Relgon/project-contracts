@@ -7,8 +7,9 @@ import { Component,OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   links = [
-    { path: '/employee', icon: 'home', label: 'Employees'},
-    { path: '/position', icon: 'home', label: 'Positions'}
+    { path: '/employee', icon: 'list', label: 'Employees'},
+    { path: '/position', icon: 'list', label: 'Positions'},
+    { path: '/project', icon: 'assignment', label: 'Projects'}
   ]
 
   ngOnInit() {

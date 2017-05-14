@@ -10,12 +10,13 @@
 				</md-card-header>
 				<md-card-actions>
 						<button md-button>EDIT</button>
-						<button md-button>DELETE</button>
+						<button md-button (click)="deleteItem(position.Id)">DELETE</button>
        </md-card-actions>
 			</md-card>
 		 
 		</md-grid-tile>
 	</md-grid-list>
+	<button md-fab class="add-position-button"><md-icon>add</md-icon></button>
 <!--<md-list>
   <md-list-item *ngFor="let position of positions">
     <img md-list-avatar src="../../favicon.ico" alt="">

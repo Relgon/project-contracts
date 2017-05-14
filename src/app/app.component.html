@@ -3,8 +3,9 @@
     <a md-button
        *ngFor="let toplink of links"
        [routerLink]="toplink.path">
-      <!--<md-icon>{{topLink.icon}}</md-icon> &nbsp; {{topLink.label}}-->
+      <md-icon>{{toplink.icon}}</md-icon>  
       {{toplink.label}}
+
     </a>
   </div>
 </md-toolbar>

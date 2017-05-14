@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog, MdDialogRef} from '@angular/material';
+import { DeleteConfirmationComponent } from '../delete-confirmation/delete-confirmation.component';
 
 @Component({
   selector: 'app-position',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PositionComponent implements OnInit {
   private positions: Object[];
-  constructor() { }
+  constructor(public dialog: MdDialog) { }
 
   ngOnInit() {
     this.positions = new Array();
@@ -19,5 +21,15 @@ export class PositionComponent implements OnInit {
      });
     }
     console.log(this.positions)
+  }
+
+  deleteItem(positionId){
+    let dialogRef = this.dialog.open(DeleteConfirmationComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result){
+        let index = this.positions.findIndex(t => t['Id'] == positionId);
+        this.positions.splice(index,1);
+      }
+    });
   }
 }

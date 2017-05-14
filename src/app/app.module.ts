@@ -12,15 +12,20 @@ import { AppComponent } from './app.component';
 import { PositionComponent } from './position/position.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeProjectsComponent } from './employee/employee-projects/employee-projects.component';
+import { ProjectComponent } from './project/project.component';
 
 import { EmployeeService } from './service/employee.service';
+import { ProjectService } from './service/project.service';
+import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PositionComponent,
     EmployeeComponent,
-    EmployeeProjectsComponent
+    EmployeeProjectsComponent,
+    ProjectComponent,
+    DeleteConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,8 @@ import { EmployeeService } from './service/employee.service';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [EmployeeService],
-  bootstrap: [AppComponent]
+  providers: [EmployeeService,ProjectService],
+  bootstrap: [AppComponent],
+  entryComponents: [DeleteConfirmationComponent]
 })
 export class AppModule { }
