@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'; 
 import { EmployeeService } from '../../service/employee.service';
+import { EmployeeProject } from '../../model/employeeProject';
 
 @Component({
   moduleId: module.id,
@@ -11,14 +12,18 @@ import { EmployeeService } from '../../service/employee.service';
 export class EmployeeProjectsComponent implements OnInit {
   public id: number;
   public sub: any;
-  public employeeProjects: Object[];
+  public employeeProjects: EmployeeProject[];
   constructor(private route: ActivatedRoute, 
               private employeeService: EmployeeService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => this.id =+params['id'])
-    this.employeeProjects = this.employeeService.getEmployeeProjects(this.id);
-    console.log(this.employeeProjects)
+    this.employeeService.getEmployeeProjects(this.id)
+      .subscribe(t => {
+      this.employeeProjects = t;
+      console.log(this.employeeProjects, 'EMPLOYEE PROJECTS');
+    });
+    
   }
 
 }

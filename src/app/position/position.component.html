@@ -5,18 +5,18 @@
 			<md-card class="position-card">
 				<md-card-header>
 					<div md-card-avatar class="position-card-avatar"></div>
-					<md-card-title>{{position.Name}}</md-card-title>
-					<md-card-subtitle>Salary: {{position.Salary}}</md-card-subtitle>
+					<md-card-title>{{position.name}}</md-card-title>
+					<md-card-subtitle>Salary: {{position.salary}}</md-card-subtitle>
 				</md-card-header>
 				<md-card-actions>
-						<button md-button>EDIT</button>
-						<button md-button (click)="deleteItem(position.Id)">DELETE</button>
+						<!--<button md-button >EDIT</button>
+						<button md-button (click)="deleteItem(position.Id)">DELETE</button>-->
        </md-card-actions>
 			</md-card>
 		 
 		</md-grid-tile>
 	</md-grid-list>
-	<button md-fab class="add-position-button"><md-icon>add</md-icon></button>
+	<button md-fab class="add-position-button" [routerLink]="'/position/new'"><md-icon>add</md-icon></button>
 <!--<md-list>
   <md-list-item *ngFor="let position of positions">
     <img md-list-avatar src="../../favicon.ico" alt="">

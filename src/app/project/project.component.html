@@ -3,16 +3,16 @@
     <md-card>
       <md-card-header>
         <div md-card-avatar class="project-card-avatar"></div>
-        <md-card-title>{{project.Title}}</md-card-title>
+        <md-card-title>{{project.title}}</md-card-title>
       </md-card-header>
       <md-card-content>
-        <p>{{project.Description}}</p>
-        <p>Start date: {{project.StartDate}}</p>
-        <p>End date: {{project.EndDate}}</p>
+        <p>{{project.description}}</p>
+        <p>Start date: {{project.startDate | date: 'dd/MM/yyyy'}}</p>
+        <p>End date: {{project.endDate | date: 'dd/MM/yyyy'}}</p>
       </md-card-content>
       <md-card-actions>
-        <button md-button>EDIT</button>
-        <button md-button>DELETE</button>
+        <!--<button md-button>EDIT</button>
+        <button md-button>DELETE</button>-->
        </md-card-actions>
     </md-card>
 	</md-grid-tile>

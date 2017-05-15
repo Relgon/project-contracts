@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MdDialog, MdDialogRef} from '@angular/material';
 import { DeleteConfirmationComponent } from '../delete-confirmation/delete-confirmation.component';
+import { Position } from '../model/position';
+import { PositionService } from '../service/position.service';
 
 @Component({
   selector: 'app-position',
@@ -8,26 +10,19 @@ import { DeleteConfirmationComponent } from '../delete-confirmation/delete-confi
   styleUrls: ['./position.component.css']
 })
 export class PositionComponent implements OnInit {
-  private positions: Object[];
-  constructor(public dialog: MdDialog) { }
+  private positions: Position[];
+  constructor(public dialog: MdDialog, private positionService: PositionService) { }
 
   ngOnInit() {
-    this.positions = new Array();
-    for (let i = 1; i < 20; i++){
-      this.positions.push({
-        Id : i,
-        Name : "Pos"+i,
-        Salary : 200*i
-     });
-    }
-    console.log(this.positions)
+    let pos;
+    this.positionService.fetchPositions().subscribe(t => this.positions = t);
   }
 
   deleteItem(positionId){
     let dialogRef = this.dialog.open(DeleteConfirmationComponent);
     dialogRef.afterClosed().subscribe(result => {
       if (result){
-        let index = this.positions.findIndex(t => t['Id'] == positionId);
+        let index = this.positions.findIndex(t => t.id == positionId);
         this.positions.splice(index,1);
       }
     });

@@ -1,0 +1,19 @@
+<md-grid-list cols="1">
+    <md-card class="dashboard-card">
+        
+    <md-card-title>Edit position</md-card-title>
+        <md-card-content>
+            <form class="example-form">
+                <md-input-container class="example-full-width">
+                    <input mdInput [(ngModel)]="position.name" placeholder="Tite" value="{{position.name}}" name="name">
+                </md-input-container>
+
+                <md-input-container class="example-full-width">
+                    <input mdInput [(ngModel)]="position.salary" placeholder="Salary" name="salary">
+                </md-input-container>
+
+                <a md-raised-button [color]="accent" routerLink="/position" (click)="save()"><md-icon>check</md-icon>Сохранить</a><br>
+            </form>
+        </md-card-content>
+    </md-card>
+</md-grid-list>

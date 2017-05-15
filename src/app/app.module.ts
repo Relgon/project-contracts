@@ -10,13 +10,16 @@ import { routes } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { PositionComponent } from './position/position.component';
+import { PositionEditComponent } from './position/position-edit/position-edit.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeProjectsComponent } from './employee/employee-projects/employee-projects.component';
 import { ProjectComponent } from './project/project.component';
 
 import { EmployeeService } from './service/employee.service';
 import { ProjectService } from './service/project.service';
+import { PositionService } from './service/position.service';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { DeleteConfirmationComponent } from './delete-confirmation/delete-confir
     EmployeeComponent,
     EmployeeProjectsComponent,
     ProjectComponent,
-    DeleteConfirmationComponent
+    DeleteConfirmationComponent,
+    PositionEditComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,7 @@ import { DeleteConfirmationComponent } from './delete-confirmation/delete-confir
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [EmployeeService,ProjectService],
+  providers: [EmployeeService,ProjectService,PositionService],
   bootstrap: [AppComponent],
   entryComponents: [DeleteConfirmationComponent]
 })

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../service/project.service';
+import { Project } from '../model/project';
+import {DateFormatPipe} from 'angular2-moment';
 
 @Component({
   selector: 'app-project',
@@ -7,10 +9,13 @@ import { ProjectService } from '../service/project.service';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
-  private projects: Object[];
+  private projects: Project[];
   constructor(private projectService : ProjectService ) { }
 
   ngOnInit() {
-    this.projects = this.projectService.fetchProjects();
+    this.projectService.fetchProjects()
+      .subscribe(t => {
+      this.projects = t;
+    });
   }
 }
